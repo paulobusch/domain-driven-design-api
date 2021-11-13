@@ -1,16 +1,13 @@
 ﻿using DDD.Domain.Entities;
 using DDD.Infra.Data.EntityConfig;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace DDD.Infra.Data.Contexts
 {
     public class DDDContext : DbContext
     {
-        public DbSet<Customer> Customers { get; }
-        public DbSet<Product> Products { get; }
+        public DbSet<Customer> Customers { get; set; }
+        public DbSet<Product> Products { get; set; }
 
         public DDDContext(DbContextOptions<DDDContext> options) : base(options) { }
 
